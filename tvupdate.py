@@ -7,13 +7,11 @@ from selenium.webdriver.chrome.options import Options
 import requests, json, sys, re, time, base64, random
 
 jsonfile = r'/var/www/tv.sjfvip.tk/tvjson/tvdata.json'
-userdir = r'/var/www/html/tvjson/'
+userfile = r'/var/www/tv.sjfvip.tk/tvjson/shenjunfeng.json'
 logfile = r'/var/log/tv.log'
-user = ['shenjunfeng']
-#user = ['shenjunfeng', 'shenyulan']
 
-chrome_path = r'/root/browsermob/bin/chromedriver'
-server = Server(r'/root/browsermob/bin/browsermob-proxy')
+chrome_path = r'/usr/local/browsermob/bin/chromedriver'
+server = Server(r'/usr/local/browsermob/bin/browsermob-proxy')
 
 num = 1
 
@@ -27,11 +25,9 @@ def load_tvch():
 
 def save_tvch():
     """保存频道JSON文件"""
-    for name in user:
-        file = userdir + name + ".json"
-        with open(file, 'wt', encoding='utf-8') as f:
-            json.dump(channel_data, f, ensure_ascii=False, indent=2)
-        print("成功写入频道文件=======================》【%s】" % (file))
+    with open(userfile, 'wt', encoding='utf-8') as f:
+        json.dump(channel_data, f, ensure_ascii=False, indent=2)
+    print("成功写入频道文件=======================》【%s】" % (file))
 
 
 def tv_update(url):
