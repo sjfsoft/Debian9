@@ -27,7 +27,7 @@ def save_tvch():
     """保存频道JSON文件"""
     with open(userfile, 'wt', encoding='utf-8') as f:
         json.dump(channel_data, f, ensure_ascii=False, indent=2)
-    print("成功写入频道文件=======================》【%s】" % (file))
+    print("成功写入频道文件=======================》【%s】" % (userfile))
 
 
 def tv_update(url):
