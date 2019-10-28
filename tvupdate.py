@@ -6,14 +6,14 @@ from browsermobproxy import Server
 from selenium.webdriver.chrome.options import Options
 import requests, json, sys, re, time, base64, random
 
-jsonfile = r'/root/tv/tvdata.json'
+jsonfile = r'/var/www/tv.sjfvip.tk/tvjson/tvdata.json'
 userdir = r'/var/www/html/tvjson/'
 logfile = r'/var/log/tv.log'
 user = ['shenjunfeng']
 #user = ['shenjunfeng', 'shenyulan']
 
-chrome_path = r'/root/tv/chromedriver'
-server = Server(r'/root/tv/browsermob/bin/browsermob-proxy')
+chrome_path = r'/root/browsermob/bin/chromedriver'
+server = Server(r'/root/browsermob/bin/browsermob-proxy')
 
 num = 1
 
